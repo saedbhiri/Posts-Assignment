@@ -1,0 +1,30 @@
+<div class="container top">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+  </div>
+  <div class="col-md-10">
+    <div class="card text-center">
+      <div class="card-header">
+        {{postItem.title}}
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{postItem.body}}</p>
+      </div>
+      <div class="card-footer text-muted">
+        Post ID : {{postItem.id}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-1">
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-primary btn-lg top text-center" (click)="onBack()">Back</button>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>

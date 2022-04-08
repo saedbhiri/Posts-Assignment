@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col top">
+    <div class="container">
+      <div class="accordion" id="accordionPosts">
+        <div class="accordion-item" *ngFor="let post of posts; let i = index">
+          <h2 class="accordion-header" [id]="'heading'+i">
+
+            <button class="accordion-button" [ngClass]="{collapsed : post.id != selectedPost}" type="button"
+              data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="false"
+              [attr.aria-controls]="'collapse'+i">
+              {{post.title}}
+            </button>
+          </h2>
+          <div [id]="'collapse'+i" class="accordion-collapse collapse" [ngClass]="{show : post.id == selectedPost}"
+            [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionPosts">
+            <div class="accordion-body">
+              {{post.body}}
+              <div>
+                <a style="cursor: pointer;" [routerLink]="['details',post.id]">Go to post page</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
